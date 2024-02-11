@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct CharacterListResponseInfoDTO : Codable {
+struct PagedResponseInfoDTO : Codable {
     let count: Int?
     let pages: Int?
     let next: String?
     let prev: String?
 }
 
-struct CharacterListResponseDTO : Codable {
-    let info: CharacterListResponseInfoDTO
-    let results: [CharacterDTO]
+struct PagedListResponseDTO<T: Codable> : Codable {
+    let info: PagedResponseInfoDTO
+    let results: [T]
 }
 
 /*

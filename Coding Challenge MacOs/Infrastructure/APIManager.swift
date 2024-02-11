@@ -5,7 +5,6 @@
 //  Created by Miguel on 10/02/2024.
 //
 
-import Combine
 import AppKit
 
 protocol APIManager: AnyObject { }
@@ -19,13 +18,16 @@ extension APIManager {
             let decoder = JSONDecoder()
             let serverResponse = try decoder.decode(T.self, from: data)
             
+            print(serverResponse)
             return .success(serverResponse)
             
         } catch let error as DecodingError {
             
+            print(error)
             return .failure(Failure.decodingError(error))
         } catch {
             
+            print(error)
             return .failure(Failure.APIError(error))
         }
     }

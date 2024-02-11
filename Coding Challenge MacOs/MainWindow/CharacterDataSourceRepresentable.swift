@@ -9,6 +9,6 @@ import Foundation
 
 protocol CharacterDataSourceRepresentable {
     
-    func fetchCharactersList(fromPage page: Int) async -> Result<CharacterListResponseDTO, Failure>
-    func fetchSingleCharacter() async -> Result<CharacterDTO, Failure>
+    func fetchCharacterList(fromPage page: Int) async -> Result<PagedListResponseDTO<CharacterDTO>, Failure>
+    func fetchSingleCharacter(withId id: Int) async -> Result<CharacterDTO, Failure>
 }

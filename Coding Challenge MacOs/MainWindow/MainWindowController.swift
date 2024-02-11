@@ -31,7 +31,7 @@ final class MainWindowController: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
         
         window?.minSize = NSSize(width: 800, height: 700)
-        window?.title = "My MacOS App"
+        window?.title = "Rick & Morty App"
         window?.delegate = self
         window?.setFrame(NSRect(x: 0, y: 0, width: 900, height: 700), display: true)
         window?.center()

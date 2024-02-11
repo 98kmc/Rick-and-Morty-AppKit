@@ -18,17 +18,11 @@ final class MainWindowCoordinator<R: AppRouter>: Coordinator {
     }
 
     func start() {
-        let vc = CharacterListViewController()
+        
+        let vc = ContainerViewController()
         windowController.contentViewController = vc
         windowController.showWindow(self)
         windowController.coordinator = self
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            
-//            let vc = ViewController()
-//            self.windowController2.contentViewController = vc
-//            self.windowController2.showWindow(self)
-//        }
     }
 }
 

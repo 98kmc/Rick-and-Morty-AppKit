@@ -1,5 +1,5 @@
 //
-//  GetAllCharactersUseCase.swift
+//  GetSingleCharacterUseCase.swift
 //  Coding Challenge MacOs
 //
 //  Created by Miguel on 10/02/2024.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class GetAllCharactersUseCase {
+final class GetSingleCharacterUseCase {
     
     private let repository: CharacterRepositoryRepresentable
     
@@ -15,7 +15,7 @@ final class GetAllCharactersUseCase {
         self.repository = repository
     }
     
-    func invoke(page: Int) async -> Result<[Character], Failure> {
-        await repository.getCharacterList(fromPage: page)
+    func invoke(characterId: Int) async -> Result<Character, Failure> {
+        await repository.getSingleCharacter(withId: characterId)
     }
 }
