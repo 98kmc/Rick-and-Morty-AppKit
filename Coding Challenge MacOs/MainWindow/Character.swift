@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Character {
+struct Character: Identifiable {
+    
     let id: Int
     let name: String
     let status: CharacterStatus
@@ -20,4 +21,15 @@ struct Character {
     let episode: [String]
     let url: String
     let created: String
+}
+
+extension Character: Hashable {
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

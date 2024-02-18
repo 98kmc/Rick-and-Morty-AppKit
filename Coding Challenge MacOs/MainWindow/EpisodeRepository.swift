@@ -9,10 +9,9 @@ import Foundation
 
 final class EpisodeRepository: EpisodeRepositoryRepresentable {
     
+    private let service: EpisodeAPIDataSource
     
-    private let service: EpisodeDataSourceRepresentable
-    
-    init(service: EpisodeDataSourceRepresentable = EpisodeAPIDataSource()) {
+    init(service: EpisodeAPIDataSource = EpisodeAPIDataSource()) {
         self.service = service
     }
     

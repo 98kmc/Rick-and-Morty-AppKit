@@ -10,8 +10,8 @@ import AppKit
 final class MainWindowCoordinator<R: AppRouter>: Coordinator {
     
     private let router: R
-    private lazy var windowController = MainWindowController()
-    private lazy var windowController2 = MainWindowController()
+    private lazy var windowController = { MainWindowController() }()
+    private lazy var allCharacterUseCase = { GetAllCharactersUseCase() }()
     
     init(router: R) {
         self.router = router
@@ -19,7 +19,16 @@ final class MainWindowCoordinator<R: AppRouter>: Coordinator {
 
     func start() {
         
-        let vc = ContainerViewController()
+        // Create characterDetail
+        let characterDetailViewModel = CharacterDetailViewModel()
+        
+        // Create characterList
+        let characterListViewModel = CharacterListViewModel(characterUseCase: allCharacterUseCase, delegate: characterDetailViewModel)
+        let characterListVC = CharacterListViewController(viewModel: characterListViewModel)
+        
+        // Configure Main Window
+        let vc = ContainerViewController(characterListVC: characterListVC)
+        
         windowController.contentViewController = vc
         windowController.showWindow(self)
         windowController.coordinator = self

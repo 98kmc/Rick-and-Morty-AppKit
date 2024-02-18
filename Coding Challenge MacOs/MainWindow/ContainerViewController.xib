@@ -18,20 +18,20 @@
         <customView translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="518" height="540"/>
             <subviews>
-                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egK-Rh-fXL" userLabel="CharactersContainer">
-                    <rect key="frame" x="0.0" y="0.0" width="173" height="540"/>
-                </customView>
                 <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCP-r8-4ZC" userLabel="DetailContainer">
-                    <rect key="frame" x="173" y="0.0" width="345" height="540"/>
+                    <rect key="frame" x="130" y="0.0" width="388" height="540"/>
+                </customView>
+                <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egK-Rh-fXL" userLabel="CharactersContainer">
+                    <rect key="frame" x="0.0" y="0.0" width="130" height="540"/>
                 </customView>
             </subviews>
             <constraints>
                 <constraint firstItem="egK-Rh-fXL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="1lr-lQ-4pd"/>
                 <constraint firstItem="egK-Rh-fXL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="50t-bJ-oEG"/>
+                <constraint firstItem="egK-Rh-fXL" firstAttribute="width" secondItem="Hz6-mo-xeY" secondAttribute="width" multiplier="0.25" id="5S7-Hf-9fl"/>
                 <constraint firstItem="uCP-r8-4ZC" firstAttribute="leading" secondItem="egK-Rh-fXL" secondAttribute="trailing" id="63Y-Zb-euw"/>
                 <constraint firstAttribute="trailing" secondItem="uCP-r8-4ZC" secondAttribute="trailing" id="C7M-hq-Lay"/>
                 <constraint firstItem="uCP-r8-4ZC" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="DBc-ub-oZD"/>
-                <constraint firstItem="egK-Rh-fXL" firstAttribute="width" secondItem="Hz6-mo-xeY" secondAttribute="width" multiplier="0.3333" id="GJV-C5-1ut"/>
                 <constraint firstAttribute="bottom" secondItem="uCP-r8-4ZC" secondAttribute="bottom" id="P8S-Qt-o0N"/>
                 <constraint firstAttribute="bottom" secondItem="egK-Rh-fXL" secondAttribute="bottom" id="fgi-uc-OGE"/>
             </constraints>

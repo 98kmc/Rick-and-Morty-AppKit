@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharacterAPIDataSource: CharacterDataSourceRepresentable, APIManager {
+final class CharacterAPIDataSource: APIManager {
     private let baseUrl = Constants.BASE_URL.rawValue
     
     func fetchCharacterList(fromPage page: Int) async -> Result<PagedListResponseDTO<CharacterDTO>, Failure> {

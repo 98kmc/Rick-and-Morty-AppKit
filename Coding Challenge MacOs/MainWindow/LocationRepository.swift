@@ -9,9 +9,9 @@ import Foundation
 
 final class LocationRepository: LocationRepositoryRepresentable {
 
-    private let service: LocationDataSourceRepresentable
+    private let service: LocationAPIDataSource
     
-    init(service: LocationDataSourceRepresentable = LocationAPIDataSource()) {
+    init(service: LocationAPIDataSource = LocationAPIDataSource()) {
         self.service = service
     }
     

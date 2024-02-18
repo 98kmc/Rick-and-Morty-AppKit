@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LocationAPIDataSource: LocationDataSourceRepresentable, APIManager {
+final class LocationAPIDataSource: APIManager {
     
     private let baseUrl = Constants.BASE_URL.rawValue
 

@@ -8,29 +8,59 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CharacterListViewController" customModule="Coding_Challenge_MacOs" customModuleProvider="target">
             <connections>
+                <outlet property="charactersCollectionView" destination="jKS-Bk-ghU" id="e99-gp-IGK"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <rect key="frame" x="0.0" y="0.0" width="435" height="597"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="usm-gi-mxN">
-                    <rect key="frame" x="223" y="128" width="35" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Hello" id="dCN-D6-zkF">
-                        <font key="font" usesAppearanceFont="YES"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-nF-WDQ" userLabel="BackgroundImage">
+                    <rect key="frame" x="-71" y="-151" width="506" height="900"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="CharacterListBackground" id="CS3-3T-4cr"/>
+                </imageView>
+                <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwy-km-mxN">
+                    <rect key="frame" x="0.0" y="0.0" width="435" height="597"/>
+                    <clipView key="contentView" drawsBackground="NO" id="7E5-HC-A6L">
+                        <rect key="frame" x="1" y="1" width="433" height="595"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="jKS-Bk-ghU">
+                                <rect key="frame" x="0.0" y="0.0" width="433" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="kNL-aV-Tvz">
+                                    <size key="itemSize" width="50" height="50"/>
+                                </collectionViewFlowLayout>
+                                <color key="primaryBackgroundColor" red="0.96608664769999997" green="0.96608664769999997" blue="0.96608664769999997" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96608664772727271" green="0.96608664772727271" blue="0.96608664772727271" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="67z-60-KY7">
+                        <rect key="frame" x="1" y="580" width="433" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="hU6-Ai-6b8">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
             <constraints>
-                <constraint firstItem="usm-gi-mxN" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="EXK-bc-T0x"/>
-                <constraint firstItem="usm-gi-mxN" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="pkJ-Xr-eWR"/>
+                <constraint firstItem="Mka-nF-WDQ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="1gt-c2-hdw"/>
+                <constraint firstItem="kwy-km-mxN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="9P7-Zs-cCU"/>
+                <constraint firstAttribute="bottom" secondItem="kwy-km-mxN" secondAttribute="bottom" id="YGt-8n-fzj"/>
+                <constraint firstAttribute="trailing" secondItem="Mka-nF-WDQ" secondAttribute="trailing" id="ZFM-mh-Mm8"/>
+                <constraint firstItem="kwy-km-mxN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="a0z-Q6-gwI"/>
+                <constraint firstAttribute="trailing" secondItem="kwy-km-mxN" secondAttribute="trailing" id="aRW-Kh-1Wv"/>
             </constraints>
-            <point key="canvasLocation" x="25" y="135"/>
+            <point key="canvasLocation" x="-302.5" y="-246.5"/>
         </customView>
     </objects>
+    <resources>
+        <image name="CharacterListBackground" width="506" height="900"/>
+    </resources>
 </document>

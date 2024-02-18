@@ -8,9 +8,10 @@
 import Foundation
 
 final class CharacterRepository: CharacterRepositoryRepresentable {
-    private let service: CharacterDataSourceRepresentable
     
-    init(service: CharacterDataSourceRepresentable = CharacterAPIDataSource()) {
+    private let service: CharacterAPIDataSource
+    
+    init(service: CharacterAPIDataSource = CharacterAPIDataSource()) {
         self.service = service
     }
     

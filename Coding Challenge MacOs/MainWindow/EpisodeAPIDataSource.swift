@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class EpisodeAPIDataSource: EpisodeDataSourceRepresentable, APIManager {
+final class EpisodeAPIDataSource: APIManager {
     
     private let baseUrl = Constants.BASE_URL.rawValue
 

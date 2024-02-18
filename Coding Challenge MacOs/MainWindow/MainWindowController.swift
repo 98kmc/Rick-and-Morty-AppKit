@@ -30,10 +30,10 @@ final class MainWindowController: NSWindowController, NSWindowDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        window?.minSize = NSSize(width: 800, height: 700)
+        window?.minSize = NSSize(width: 900, height: 700)
         window?.title = "Rick & Morty App"
         window?.delegate = self
-        window?.setFrame(NSRect(x: 0, y: 0, width: 900, height: 700), display: true)
+        window?.setFrame(NSRect(x: 0, y: 0, width: 1100, height: 700), display: true)
         window?.center()
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22155" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CharacterItemCell" customModule="Coding_Challenge_MacOs" customModuleProvider="target">
+            <connections>
+                <outlet property="characterNSImageView" destination="YGo-q6-Zl0" id="vqh-FN-x4o"/>
+                <outlet property="characterNameTextField" destination="E6D-eB-phq" id="8EF-Fp-K85"/>
+                <outlet property="characterOriginTextField" destination="gvb-Ew-XFH" id="Wx0-Io-pjD"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="432" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGo-q6-Zl0">
+                    <rect key="frame" x="16" y="50" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Juu-sH-kFK"/>
+                        <constraint firstAttribute="width" secondItem="YGo-q6-Zl0" secondAttribute="height" multiplier="1:1" id="WHR-gT-umz"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="placeholder" id="3CC-YD-Xde"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="round" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E6D-eB-phq" userLabel="Name Text Field">
+                    <rect key="frame" x="130" y="105" width="125" height="23"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Character Name" id="Ecb-8p-Jjm">
+                        <font key="font" size="16" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Ew-XFH" userLabel="Origin Text Field">
+                    <rect key="frame" x="130" y="50" width="73" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="from: Earth" id="bbf-h4-QbS">
+                        <font key="font" size="13" name="ChalkboardSE-Light"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="E6D-eB-phq" secondAttribute="trailing" constant="291" id="6ou-ys-qRa"/>
+                <constraint firstItem="gvb-Ew-XFH" firstAttribute="leading" secondItem="YGo-q6-Zl0" secondAttribute="trailing" constant="16" id="GwT-6A-JnK"/>
+                <constraint firstAttribute="centerY" secondItem="YGo-q6-Zl0" secondAttribute="centerY" id="Rwk-bb-Fpd"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gvb-Ew-XFH" secondAttribute="trailing" constant="16" id="dVe-L4-gRs"/>
+                <constraint firstItem="E6D-eB-phq" firstAttribute="leading" secondItem="YGo-q6-Zl0" secondAttribute="trailing" constant="16" id="j1e-gC-7R7"/>
+                <constraint firstItem="YGo-q6-Zl0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="nky-Ts-Che"/>
+                <constraint firstItem="gvb-Ew-XFH" firstAttribute="bottom" secondItem="YGo-q6-Zl0" secondAttribute="bottom" id="pQH-nP-bbo"/>
+                <constraint firstItem="E6D-eB-phq" firstAttribute="centerY" secondItem="YGo-q6-Zl0" secondAttribute="centerY" constant="-16" id="s1g-lz-v9Y"/>
+                <constraint firstItem="YGo-q6-Zl0" firstAttribute="height" secondItem="Hz6-mo-xeY" secondAttribute="height" multiplier="0.5" id="thl-zZ-9uo"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                    <color key="value" name="RMPaletteGreen"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="1"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="15"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="14" y="-82"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="placeholder" width="996" height="998"/>
+        <namedColor name="RMPaletteGreen">
+            <color red="0.58823529411764708" green="0.80784313725490198" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
