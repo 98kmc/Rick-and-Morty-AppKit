@@ -45,7 +45,7 @@
                 </textField>
                 <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Ew-XFH" userLabel="Origin Text Field">
                     <rect key="frame" x="130" y="50" width="73" height="19"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="from: Earth" id="bbf-h4-QbS">
+                    <textFieldCell key="cell" truncatesLastVisibleLine="YES" title="from: Earth" id="bbf-h4-QbS">
                         <font key="font" size="13" name="ChalkboardSE-Light"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -56,7 +56,7 @@
                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="E6D-eB-phq" secondAttribute="trailing" constant="291" id="6ou-ys-qRa"/>
                 <constraint firstItem="gvb-Ew-XFH" firstAttribute="leading" secondItem="YGo-q6-Zl0" secondAttribute="trailing" constant="16" id="GwT-6A-JnK"/>
                 <constraint firstAttribute="centerY" secondItem="YGo-q6-Zl0" secondAttribute="centerY" id="Rwk-bb-Fpd"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gvb-Ew-XFH" secondAttribute="trailing" constant="16" id="dVe-L4-gRs"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gvb-Ew-XFH" secondAttribute="trailing" constant="20" id="dVe-L4-gRs"/>
                 <constraint firstItem="E6D-eB-phq" firstAttribute="leading" secondItem="YGo-q6-Zl0" secondAttribute="trailing" constant="16" id="j1e-gC-7R7"/>
                 <constraint firstItem="YGo-q6-Zl0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="nky-Ts-Che"/>
                 <constraint firstItem="gvb-Ew-XFH" firstAttribute="bottom" secondItem="YGo-q6-Zl0" secondAttribute="bottom" id="pQH-nP-bbo"/>

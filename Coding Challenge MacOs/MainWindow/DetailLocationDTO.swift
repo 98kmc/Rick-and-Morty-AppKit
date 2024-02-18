@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LocationDTO: Codable {
+struct DetailLocationDTO: Codable {
     let id: Int?
     let name: String?
     let type: String?

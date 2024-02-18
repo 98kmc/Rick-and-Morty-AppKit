@@ -15,7 +15,7 @@ final class LocationRepository: LocationRepositoryRepresentable {
         self.service = service
     }
     
-    func getLocationList(fromPage page: Int) async -> Result<[Location], Failure> {
+    func getLocationList(fromPage page: Int) async -> Result<[DetailLocation], Failure> {
         
         let serviceResponse = await service.fetchLocationList(fromPage: page)
         
@@ -27,7 +27,7 @@ final class LocationRepository: LocationRepositoryRepresentable {
         }
     }
     
-    func getSingleLocation(withId id: Int) async -> Result<Location, Failure> {
+    func getSingleLocation(withId id: Int) async -> Result<DetailLocation, Failure> {
         let serviceResponse = await service.fetchSingleLocation(withId: id)
         
         switch(serviceResponse) {

@@ -9,12 +9,12 @@ import Foundation
 
 final class LocationDataMapper {
     
-    static func map(_ data: [LocationDTO]) -> [Location] {
+    static func map(_ data: [DetailLocationDTO]) -> [DetailLocation] {
         data.map { convertToLocation($0) }
     }
     
-    static func convertToLocation(_ location: LocationDTO) -> Location {
-        return Location(
+    static func convertToLocation(_ location: DetailLocationDTO) -> DetailLocation {
+        return DetailLocation(
             id: location.id ?? -1,
             name: location.name.orEmpty,
             type: location.type.orEmpty,

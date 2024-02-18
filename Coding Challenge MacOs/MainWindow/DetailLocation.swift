@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Location {
+struct DetailLocation {
     let id: Int
     let name: String
     let type: String

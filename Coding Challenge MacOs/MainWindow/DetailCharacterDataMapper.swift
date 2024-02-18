@@ -1,29 +1,16 @@
 //
-//  CharacterDataMapper.swift
+//  CharacterDetailMapper.swift
 //  Coding Challenge MacOs
 //
-//  Created by Miguel on 10/02/2024.
+//  Created by Miguel on 17/02/2024.
 //
 
 import Foundation
 
-final class CharacterDataMapper {
+final class DetailCharacterDataMapper {
     
     static func map(_ data: [DetailCharacterDTO]) -> [DetailCharacter] {
         data.map { convertToDetailCharacter($0) }
-    }
-    
-    static func map(_ data: [CharacterDTO]) -> [Character] {
-        data.map { convertToCharacter($0) }
-    }
-    
-    static func convertToCharacter(_ character: CharacterDTO) -> Character {
-        return Character(
-            id: character.id ?? -1,
-            name: character.name.orEmpty,
-            origin: Location(name: character.origin?.name ?? ""),
-            image: character.image.orEmpty,
-            url: character.url.orEmpty)
     }
     
     static func convertToDetailCharacter(_ character: DetailCharacterDTO) -> DetailCharacter {

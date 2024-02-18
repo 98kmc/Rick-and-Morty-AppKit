@@ -12,16 +12,49 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
     @IBOutlet weak var characterNSImageView: NSImageView!
     @IBOutlet weak var characterNameTextField: NSTextField!
     @IBOutlet weak var characterOriginTextField: NSTextField!
+    private var onSelect: (() -> Void)?
+    
+    override var isSelected: Bool {
+        didSet {
+            selectionDidChange(isSelected)
+            if isSelected { onSelect?() }
+        }
+    }
     
     static var reuseIdentifier = NSUserInterfaceItemIdentifier("CharacterItemCell")
     
     override func viewWillAppear() {
         setUpBorder()
+        characterOriginTextField.maximumNumberOfLines = 1
     }
     
-    func render(imageUrl: String, characterName: String, characterOrigin: String) {
+    private func setUpBorder() {
+        view.wantsLayer = true
+        view.layer?.borderWidth = 1
+        view.layer?.borderColor = NSColor(named: "RMPaletteGreen")?.cgColor
+        view.layer?.cornerRadius = 25
+    }
+    
+    private func selectionDidChange(_ value: Bool) {
+        // Change Background
+        view.layer?.backgroundColor = value
+        ? NSColor(named: "RMPaletteGreen")?.cgColor
+        : .clear
+        
+        //Change Border Color
+        view.layer?.borderColor = value
+        ? .white
+        : NSColor(named: "RMPaletteGreen")?.cgColor
+    }
+}
+
+// MARK: Exposed Methods
+extension CharacterItemCell {
+    
+    func render(imageUrl: String, characterName: String, characterOrigin: String, onSelect: @escaping () -> Void) {
         characterNameTextField.stringValue = characterName
         characterOriginTextField.stringValue = "from: \(characterOrigin)"
+        self.onSelect = onSelect
         
         Task {
             let image = try? await fetchImage(imageURL: imageUrl)
@@ -30,12 +63,5 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
                 characterNSImageView.image = image
             }
         }
-    }
-    
-    private func setUpBorder() {
-        view.wantsLayer = true
-        view.layer?.borderWidth = 4
-        view.layer?.borderColor = NSColor(named: "RMPaletteGreen")?.cgColor
-        view.layer?.cornerRadius = 15
     }
 }

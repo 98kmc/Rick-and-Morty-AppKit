@@ -17,7 +17,8 @@ extension ImageLoader {
             guard let url = URL(string: imageURL) else { throw Failure.urlConstructError }
             let (data, response) = try await URLSession.shared.data(from: url)
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode,
-                  let image = NSImage(data: data), 200...299 ~= statusCode else { throw Failure.statusCode }
+                  let image = NSImage(data: data), 200...299 ~= statusCode 
+            else { throw Failure.statusCode }
             return image
         } catch {
             throw error

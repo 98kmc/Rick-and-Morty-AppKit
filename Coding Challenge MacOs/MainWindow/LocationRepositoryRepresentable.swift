@@ -9,7 +9,7 @@ import Foundation
 
 protocol LocationRepositoryRepresentable {
     
-    func getLocationList(fromPage page: Int) async -> Result<[Location], Failure>
+    func getLocationList(fromPage page: Int) async -> Result<[DetailLocation], Failure>
     
-    func getSingleLocation(withId id: Int) async -> Result<Location, Failure>
+    func getSingleLocation(withId id: Int) async -> Result<DetailLocation, Failure>
 }

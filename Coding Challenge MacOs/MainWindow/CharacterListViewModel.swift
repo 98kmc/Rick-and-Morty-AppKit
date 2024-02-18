@@ -59,7 +59,7 @@ final class CharacterListViewModel {
 // MARK: View Events
 extension CharacterListViewModel {
     
-    func didSelectItem() {
-        
+    func didSelectItem(itemId: Int) {
+        print("selected: \(itemId)")
     }
 }

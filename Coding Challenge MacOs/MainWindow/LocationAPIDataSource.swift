@@ -11,7 +11,7 @@ final class LocationAPIDataSource: APIManager {
     
     private let baseUrl = Constants.BASE_URL.rawValue
 
-    func fetchLocationList(fromPage page: Int) async -> Result<PagedListResponseDTO<LocationDTO>, Failure> {
+    func fetchLocationList(fromPage page: Int) async -> Result<PagedListResponseDTO<DetailLocationDTO>, Failure> {
         
         //Build the Url
         guard var urlComponents = URLComponents(string: "\(baseUrl)/location")
@@ -25,7 +25,7 @@ final class LocationAPIDataSource: APIManager {
         return await request(for: url)
     }
     
-    func fetchSingleLocation(withId id: Int) async -> Result<LocationDTO, Failure> {
+    func fetchSingleLocation(withId id: Int) async -> Result<DetailLocationDTO, Failure> {
         
         guard let url = URL(string: baseUrl + "/location/\(id)")
         else { return .failure(Failure.urlConstructError) }

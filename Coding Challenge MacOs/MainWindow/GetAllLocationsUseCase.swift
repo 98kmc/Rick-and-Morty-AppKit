@@ -15,7 +15,7 @@ final class GetAllLocationsUseCase {
         self.repository = repository
     }
     
-    func invoke(page: Int) async -> Result<[Location], Failure> {
+    func invoke(page: Int) async -> Result<[DetailLocation], Failure> {
         await repository.getLocationList(fromPage: page)
     }
 }

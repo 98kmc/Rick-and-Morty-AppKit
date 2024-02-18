@@ -15,7 +15,7 @@ final class GetSingleCharacterUseCase {
         self.repository = repository
     }
     
-    func invoke(characterId: Int) async -> Result<Character, Failure> {
-        await repository.getSingleCharacter(withId: characterId)
-    }
+//    func invoke(characterId: Int) async -> Result<DetailCharacter, Failure> {
+//        await repository.getSingleCharacter(withId: characterId)
+//    }
 }

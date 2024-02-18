@@ -15,7 +15,7 @@ final class GetSingleLocationUseCase {
         self.repository = repository
     }
     
-    func invoke(locationId: Int) async -> Result<Location, Failure> {
+    func invoke(locationId: Int) async -> Result<DetailLocation, Failure> {
         await repository.getSingleLocation(withId: locationId)
     }
 }

@@ -32,7 +32,8 @@ class CharacterListViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        charactersCollectionView.isSelectable = true
+        charactersCollectionView.allowsEmptySelection = true
         charactersCollectionView.register(CharacterItemCell.self, forItemWithIdentifier: CharacterItemCell.reuseIdentifier)
     }
     
@@ -89,7 +90,10 @@ extension CharacterListViewController: NSCollectionViewDelegate {
             cell.render(
                 imageUrl: item.image,
                 characterName: item.name,
-                characterOrigin: item.location.name
+                characterOrigin: item.origin.name,
+                onSelect: { [unowned self] in
+                    viewModel.didSelectItem(itemId: item.id)
+                }
             )
             return cell
         }

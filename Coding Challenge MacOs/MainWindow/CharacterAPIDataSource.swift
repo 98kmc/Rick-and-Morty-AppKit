@@ -24,11 +24,11 @@ final class CharacterAPIDataSource: APIManager {
         return await request(for: url)
     }
     
-    func fetchSingleCharacter(withId id: Int) async -> Result<CharacterDTO, Failure> {
-        
-        guard let url = URL(string: baseUrl + "character/\(id)")
-        else { return .failure(Failure.urlConstructError) }
-        
-        return await request(for: url)
-    }
+//    func fetchSingleCharacter(withId id: Int) async -> Result<DetailCharacterDTO, Failure> {
+//        
+//        guard let url = URL(string: baseUrl + "character/\(id)")
+//        else { return .failure(Failure.urlConstructError) }
+//        
+//        return await request(for: url)
+//    }
 }
