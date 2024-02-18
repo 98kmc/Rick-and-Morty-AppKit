@@ -46,7 +46,7 @@ final class CharacterListViewModel {
             
             switch(response) {
             case .success(let fetchedCharacters):
-                characterList = fetchedCharacters
+                characterList += fetchedCharacters
                 currentPage = page
                 viewState = .success
             case .failure(let error):
@@ -61,5 +61,12 @@ extension CharacterListViewModel {
     
     func didSelectItem(itemId: Int) {
         print("selected: \(itemId)")
+    }
+    
+    func pageIfNeeded(itemId: Int) {
+        
+        guard itemId == characterList.last?.id else { return }
+        print("page down")
+        loadPage(page: currentPage + 1)
     }
 }

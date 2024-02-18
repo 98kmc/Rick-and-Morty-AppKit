@@ -12,6 +12,7 @@ private let reuseIdentifier = "Cell"
 class CharacterListViewController: NSViewController {
 
     @IBOutlet weak var charactersCollectionView: NSCollectionView!
+    @IBOutlet weak var progressView: NSProgressIndicator!
         
     // MARK: - Properties
     private let viewModel: CharacterListViewModel
@@ -35,21 +36,42 @@ class CharacterListViewController: NSViewController {
         charactersCollectionView.isSelectable = true
         charactersCollectionView.allowsEmptySelection = true
         charactersCollectionView.register(CharacterItemCell.self, forItemWithIdentifier: CharacterItemCell.reuseIdentifier)
-    }
-    
-    override func viewWillAppear() {
-        
-        charactersCollectionView.collectionViewLayout = createListLayout()
-        elements = viewModel.characterList
-        
-        applySnapshot(animatingDifferences: false)
         
         viewModel.characterListDidChange = { [unowned self] newCharacterList in
             elements = newCharacterList
             applySnapshot(animatingDifferences: true)
         }
+        
+        viewModel.viewStateDidChange = { [unowned self] state in
+            updateViewWithState(state)
+        }
     }
-
+    
+    override func viewWillAppear() {
+        
+        progressView.isHidden = true
+        charactersCollectionView.collectionViewLayout = createListLayout()
+        elements = viewModel.characterList
+        
+        applySnapshot(animatingDifferences: false)
+    }
+    
+    // MARK: Private Methods
+    private func updateViewWithState(_ state: ViewState) {
+        
+        DispatchQueue.main.sync {
+            switch(state) {
+            case .success:
+                progressView.isHidden = true
+                progressView.stopAnimation(self)
+            case .loading:
+                progressView.isHidden = false
+                progressView.startAnimation(self)
+            case .error(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 extension CharacterListViewController: NSCollectionViewDelegate {
@@ -68,7 +90,7 @@ extension CharacterListViewController: NSCollectionViewDelegate {
         
         let group: NSCollectionLayoutGroup
         let  groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                                heightDimension: .fractionalHeight(0.15))
+                                                heightDimension: .absolute(100))
         
         group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: Array(repeating: item, count: 1))
         
@@ -84,17 +106,19 @@ extension CharacterListViewController: NSCollectionViewDelegate {
     
     private func createDataSource() -> DataSource {
         
-        NSCollectionViewDiffableDataSource(collectionView: charactersCollectionView) { (collectionView, indexPath, item) -> NSCollectionViewItem? in
+        NSCollectionViewDiffableDataSource(collectionView: charactersCollectionView) { [unowned viewModel] (collectionView, indexPath, item) -> NSCollectionViewItem? in
             
             let cell: CharacterItemCell = collectionView.makeItem(withIdentifier: CharacterItemCell.reuseIdentifier, for: indexPath) as! CharacterItemCell
             cell.render(
                 imageUrl: item.image,
                 characterName: item.name,
                 characterOrigin: item.origin.name,
-                onSelect: { [unowned self] in
+                onSelect: {
                     viewModel.didSelectItem(itemId: item.id)
                 }
             )
+        
+            viewModel.pageIfNeeded(itemId: item.id)
             return cell
         }
     }

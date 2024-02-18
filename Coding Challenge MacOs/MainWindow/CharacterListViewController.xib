@@ -9,11 +9,12 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CharacterListViewController" customModule="Coding_Challenge_MacOs" customModuleProvider="target">
             <connections>
                 <outlet property="charactersCollectionView" destination="jKS-Bk-ghU" id="e99-gp-IGK"/>
+                <outlet property="progressView" destination="RIi-54-11n" id="tUE-yS-dRp"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="-3" userLabel="Application" customClass="NSProgressIndicator"/>
         <customView id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="435" height="597"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -48,14 +49,22 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <progressIndicator maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="RIi-54-11n">
+                    <rect key="frame" x="210" y="0.0" width="16" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="rAg-sq-SpF"/>
+                    </constraints>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="Mka-nF-WDQ" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="1gt-c2-hdw"/>
+                <constraint firstAttribute="bottom" secondItem="RIi-54-11n" secondAttribute="bottom" id="3wY-Gg-36U"/>
                 <constraint firstItem="kwy-km-mxN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="9P7-Zs-cCU"/>
-                <constraint firstAttribute="bottom" secondItem="kwy-km-mxN" secondAttribute="bottom" id="YGt-8n-fzj"/>
+                <constraint firstItem="RIi-54-11n" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="KyG-L3-RYY"/>
                 <constraint firstAttribute="trailing" secondItem="Mka-nF-WDQ" secondAttribute="trailing" id="ZFM-mh-Mm8"/>
                 <constraint firstItem="kwy-km-mxN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="a0z-Q6-gwI"/>
                 <constraint firstAttribute="trailing" secondItem="kwy-km-mxN" secondAttribute="trailing" id="aRW-Kh-1Wv"/>
+                <constraint firstAttribute="bottom" secondItem="kwy-km-mxN" secondAttribute="bottom" id="vbf-eP-SgI"/>
             </constraints>
             <point key="canvasLocation" x="-302.5" y="-246.5"/>
         </customView>

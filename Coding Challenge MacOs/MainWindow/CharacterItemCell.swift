@@ -12,6 +12,7 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
     @IBOutlet weak var characterNSImageView: NSImageView!
     @IBOutlet weak var characterNameTextField: NSTextField!
     @IBOutlet weak var characterOriginTextField: NSTextField!
+    
     private var onSelect: (() -> Void)?
     
     override var isSelected: Bool {
@@ -25,6 +26,7 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
     
     override func viewWillAppear() {
         setUpBorder()
+        characterNSImageView.layer?.borderColor = .white
         characterOriginTextField.maximumNumberOfLines = 1
     }
     
@@ -41,10 +43,13 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
         ? NSColor(named: "RMPaletteGreen")?.cgColor
         : .clear
         
-        //Change Border Color
+        // Change Border Color
         view.layer?.borderColor = value
         ? .white
         : NSColor(named: "RMPaletteGreen")?.cgColor
+        
+        // Change Image Border
+        characterNSImageView.layer?.borderWidth = value ? 2 : 0
     }
 }
 

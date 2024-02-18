@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B391E6AE-12D4-433F-9745-467DA315E10C"
+            uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coding Challenge MacOs/MainWindow/CharacterListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "createDataSource()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0 - d44f13e152676077"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
+                  moduleName = "Coding Challenge MacOs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kmc/Developer/Rick-and-Morty-AppKit/Coding%20Challenge%20MacOs/MainWindow/CharacterListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "836">
+               </Location>
+               <Location
+                  uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0 - d44f13e152676054"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
+                  moduleName = "Coding Challenge MacOs"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kmc/Developer/Rick-and-Morty-AppKit/Coding%20Challenge%20MacOs/MainWindow/CharacterListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "736">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
