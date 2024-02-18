@@ -10,10 +10,10 @@ import Foundation
 final class DetailCharacterDataMapper {
     
     static func map(_ data: [DetailCharacterDTO]) -> [DetailCharacter] {
-        data.map { convertToDetailCharacter($0) }
+        data.map { convertToCharacter($0) }
     }
     
-    static func convertToDetailCharacter(_ character: DetailCharacterDTO) -> DetailCharacter {
+    static func convertToCharacter(_ character: DetailCharacterDTO) -> DetailCharacter {
         return DetailCharacter(
             id: character.id ?? -1,
             name: character.name.orEmpty,

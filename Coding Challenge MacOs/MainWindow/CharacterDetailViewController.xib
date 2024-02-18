@@ -3,12 +3,22 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22155"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="CharacterDetailViewController" customModule="Coding_Challenge_MacOs" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundNSImage" destination="f6w-k3-QWX" id="wrL-Et-liZ"/>
+                <outlet property="characterGenderTextField" destination="M3A-r6-Lz3" id="rDB-9Y-h95"/>
+                <outlet property="characterImage" destination="dY7-2w-Are" id="j83-Eu-0hk"/>
+                <outlet property="characterLocationTextField" destination="B6a-nk-aBT" id="bcI-tC-23X"/>
+                <outlet property="characterNameTextField" destination="E3M-hL-5QP" id="qo2-Wa-cR3"/>
+                <outlet property="characterOriginTextField" destination="tK6-k3-Pbp" id="FVd-YI-XD4"/>
+                <outlet property="characterSpeciesTextField" destination="fLs-Ws-zHi" id="ylx-4z-5GO"/>
+                <outlet property="characterStatusTextField" destination="TKa-Pq-wC6" id="dX9-62-YNY"/>
+                <outlet property="characterTypeTextField" destination="Kck-EG-J6y" id="VBM-Gv-WBI"/>
+                <outlet property="episodesContainerView" destination="ct5-y6-zhk" id="rg3-bJ-LnS"/>
                 <outlet property="loadingNSProgressBar" destination="5bK-hf-IPR" id="6Ln-Fv-ifE"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -16,32 +26,150 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="503" height="252"/>
+            <rect key="frame" x="0.0" y="0.0" width="753" height="517"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f6w-k3-QWX" userLabel="BackgroundImage">
-                    <rect key="frame" x="0.0" y="0.0" width="503" height="252"/>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="f6w-k3-QWX" userLabel="BackgroundImage">
+                    <rect key="frame" x="0.0" y="0.0" width="753" height="517"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="CharacterDetailsBackground" id="ER0-9z-XDI"/>
                 </imageView>
-                <progressIndicator maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5bK-hf-IPR">
-                    <rect key="frame" x="0.0" y="246" width="503" height="7"/>
+                <progressIndicator hidden="YES" maxValue="100" doubleValue="50" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="5bK-hf-IPR">
+                    <rect key="frame" x="0.0" y="511" width="753" height="7"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="5" id="ofJ-VG-job"/>
                     </constraints>
                 </progressIndicator>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="ct5-y6-zhk" userLabel="EpisodesContainerView">
+                    <rect key="frame" x="50" y="0.0" width="653" height="230"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="230" id="MZn-eA-8G9"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="RMPaletteGreen"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dY7-2w-Are">
+                    <rect key="frame" x="66" y="317" width="150" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="18d-80-eIK"/>
+                        <constraint firstAttribute="width" secondItem="dY7-2w-Are" secondAttribute="height" multiplier="1:1" id="vUi-Qt-zSb"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="placeholder" id="16Q-oD-8qM"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="E3M-hL-5QP" userLabel="Character Name">
+                    <rect key="frame" x="238" y="434" width="155" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Character Name" id="PBT-fx-gFC">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-Pq-wC6" userLabel="Status">
+                    <rect key="frame" x="405" y="389" width="65" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Status" id="C4O-8o-0sA">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-Ws-zHi" userLabel="Species">
+                    <rect key="frame" x="238" y="299" width="75" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Species" id="UEL-py-7wU">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kck-EG-J6y" userLabel="Type">
+                    <rect key="frame" x="405" y="435" width="44" height="25"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Type" id="F05-sx-GuK">
+                        <font key="font" size="18" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tK6-k3-Pbp" userLabel="Origin">
+                    <rect key="frame" x="238" y="344" width="62" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Origin" id="0Nn-bi-XMd">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B6a-nk-aBT" userLabel="Location">
+                    <rect key="frame" x="405" y="344" width="82" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Location" id="wc5-LJ-0gJ">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2Ba-Vf-imL" userLabel="Episode">
+                    <rect key="frame" x="64" y="246" width="76" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Episode" id="r3h-Nc-KvA">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M3A-r6-Lz3" userLabel="Gender">
+                    <rect key="frame" x="238" y="389" width="73" height="29"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Gender" id="Nxv-7D-aN4">
+                        <font key="font" size="20" name="ChalkboardSE-Bold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <constraints>
+                <constraint firstItem="dY7-2w-Are" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="50" id="0m8-Xk-MgI"/>
+                <constraint firstItem="Kck-EG-J6y" firstAttribute="leading" secondItem="E3M-hL-5QP" secondAttribute="trailing" constant="16" id="1gj-ff-BRB"/>
+                <constraint firstItem="Kck-EG-J6y" firstAttribute="firstBaseline" secondItem="E3M-hL-5QP" secondAttribute="firstBaseline" id="6rv-VA-geJ"/>
                 <constraint firstItem="f6w-k3-QWX" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="6u6-r9-KSV"/>
+                <constraint firstItem="tK6-k3-Pbp" firstAttribute="top" secondItem="M3A-r6-Lz3" secondAttribute="bottom" constant="16" id="771-fl-lNM"/>
+                <constraint firstItem="fLs-Ws-zHi" firstAttribute="leading" secondItem="E3M-hL-5QP" secondAttribute="leading" id="96h-8Y-8X0"/>
                 <constraint firstAttribute="trailing" secondItem="5bK-hf-IPR" secondAttribute="trailing" id="Ak2-6T-IQ1"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kck-EG-J6y" secondAttribute="trailing" constant="150" id="AuO-aF-byC"/>
+                <constraint firstItem="ct5-y6-zhk" firstAttribute="top" secondItem="2Ba-Vf-imL" secondAttribute="bottom" constant="16" id="EIk-iB-5OX"/>
+                <constraint firstItem="tK6-k3-Pbp" firstAttribute="leading" secondItem="E3M-hL-5QP" secondAttribute="leading" id="HpH-6H-8hJ"/>
                 <constraint firstItem="5bK-hf-IPR" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="Jf2-Wh-rHf"/>
+                <constraint firstAttribute="bottom" secondItem="ct5-y6-zhk" secondAttribute="bottom" id="KMH-No-fgM"/>
+                <constraint firstAttribute="trailing" secondItem="ct5-y6-zhk" secondAttribute="trailing" constant="50" id="Kkr-wx-C2x"/>
+                <constraint firstItem="B6a-nk-aBT" firstAttribute="firstBaseline" secondItem="tK6-k3-Pbp" secondAttribute="firstBaseline" id="MxR-0o-htb"/>
+                <constraint firstItem="TKa-Pq-wC6" firstAttribute="leading" secondItem="Kck-EG-J6y" secondAttribute="leading" id="OZp-QO-Gdv"/>
+                <constraint firstItem="B6a-nk-aBT" firstAttribute="leading" secondItem="TKa-Pq-wC6" secondAttribute="leading" id="OyM-7I-5pB"/>
+                <constraint firstItem="TKa-Pq-wC6" firstAttribute="firstBaseline" secondItem="M3A-r6-Lz3" secondAttribute="firstBaseline" id="Svw-9O-kF5"/>
+                <constraint firstItem="M3A-r6-Lz3" firstAttribute="leading" secondItem="E3M-hL-5QP" secondAttribute="leading" id="Ws5-JH-5ze"/>
+                <constraint firstItem="5bK-hf-IPR" firstAttribute="leading" secondItem="dY7-2w-Are" secondAttribute="trailing" constant="-216" id="Xec-KU-Ssv"/>
                 <constraint firstItem="5bK-hf-IPR" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ZJ6-Gy-TEr"/>
+                <constraint firstItem="E3M-hL-5QP" firstAttribute="top" secondItem="dY7-2w-Are" secondAttribute="top" constant="4" id="ekF-8M-099"/>
+                <constraint firstItem="M3A-r6-Lz3" firstAttribute="top" secondItem="E3M-hL-5QP" secondAttribute="bottom" constant="16" id="i2J-Fc-yem"/>
+                <constraint firstItem="2Ba-Vf-imL" firstAttribute="leading" secondItem="ct5-y6-zhk" secondAttribute="leading" constant="16" id="me5-IH-jmD"/>
                 <constraint firstItem="f6w-k3-QWX" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="oth-Ih-8Je"/>
+                <constraint firstItem="dY7-2w-Are" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="66" id="uG5-vE-2zc"/>
+                <constraint firstItem="fLs-Ws-zHi" firstAttribute="top" secondItem="tK6-k3-Pbp" secondAttribute="bottom" constant="16" id="v0O-ro-oQQ"/>
+                <constraint firstItem="ct5-y6-zhk" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="50" id="whr-vq-e1P"/>
+                <constraint firstItem="E3M-hL-5QP" firstAttribute="leading" secondItem="dY7-2w-Are" secondAttribute="trailing" constant="24" id="zUY-AG-nNo"/>
             </constraints>
-            <point key="canvasLocation" x="-157.5" y="-163"/>
+            <point key="canvasLocation" x="-127.5" y="-228.5"/>
         </customView>
     </objects>
     <resources>
         <image name="CharacterDetailsBackground" width="900" height="506"/>
+        <image name="placeholder" width="996" height="998"/>
+        <namedColor name="RMPaletteGreen">
+            <color red="0.58823529411764708" green="0.80784313725490198" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

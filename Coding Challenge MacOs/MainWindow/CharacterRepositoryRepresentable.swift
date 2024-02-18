@@ -10,6 +10,4 @@ import Foundation
 protocol CharacterRepositoryRepresentable {
     
     func getCharacterList(fromPage page: Int) async -> Result<[Character], Failure> 
-    
-  //  func getSingleCharacter(withId id: Int) async -> Result<Character, Failure>
 }

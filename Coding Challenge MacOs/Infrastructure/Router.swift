@@ -13,4 +13,4 @@ protocol Router: AnyObject {
     func process(route: Route)
 }
 
-protocol AppRouter: Router where Route == AppTransition { }
+protocol AppRouter: Router where Route == AppWindow { }

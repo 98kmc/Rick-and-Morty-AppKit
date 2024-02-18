@@ -12,7 +12,7 @@
 		83134CD62B6B195100C401D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83134CD52B6B195100C401D5 /* main.swift */; };
 		83939F6D2B78091800621F8A /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F6B2B78091800621F8A /* MainWindowController.swift */; };
 		83939F782B78161800621F8A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F772B78161800621F8A /* Router.swift */; };
-		83939F7A2B78163D00621F8A /* AppTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F792B78163D00621F8A /* AppTransition.swift */; };
+		83939F7A2B78163D00621F8A /* AppWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F792B78163D00621F8A /* AppWindow.swift */; };
 		83939F7C2B78168700621F8A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F7B2B78168700621F8A /* Coordinator.swift */; };
 		83939F7E2B78182000621F8A /* MainWindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F7D2B78182000621F8A /* MainWindowCoordinator.swift */; };
 		83939F882B782D5300621F8A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83939F872B782D5300621F8A /* Constants.swift */; };
@@ -67,6 +67,7 @@
 		83CB73FD2B81A41C00B08FBA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB73FC2B81A41C00B08FBA /* Character.swift */; };
 		83CB73FF2B81A5A500B08FBA /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB73FE2B81A5A500B08FBA /* Location.swift */; };
 		83CB74022B81AA1900B08FBA /* DetailCharacterDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CB74012B81AA1900B08FBA /* DetailCharacterDataMapper.swift */; };
+		83D469922B829EB500F0956C /* DetailCharacterRepositoryRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D469912B829EB500F0956C /* DetailCharacterRepositoryRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,7 +78,7 @@
 		83134CD52B6B195100C401D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		83939F6B2B78091800621F8A /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		83939F772B78161800621F8A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		83939F792B78163D00621F8A /* AppTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransition.swift; sourceTree = "<group>"; };
+		83939F792B78163D00621F8A /* AppWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWindow.swift; sourceTree = "<group>"; };
 		83939F7B2B78168700621F8A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		83939F7D2B78182000621F8A /* MainWindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowCoordinator.swift; sourceTree = "<group>"; };
 		83939F872B782D5300621F8A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -132,6 +133,7 @@
 		83CB73FC2B81A41C00B08FBA /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		83CB73FE2B81A5A500B08FBA /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		83CB74012B81AA1900B08FBA /* DetailCharacterDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterDataMapper.swift; sourceTree = "<group>"; };
+		83D469912B829EB500F0956C /* DetailCharacterRepositoryRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterRepositoryRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +169,8 @@
 				83939F822B7820C500621F8A /* Infrastructure */,
 				83939F802B78206600621F8A /* MainWindow */,
 				83939F862B782D4000621F8A /* Utils */,
+				83939F792B78163D00621F8A /* AppWindow.swift */,
 				83134CC42B6B0B3E00C401D5 /* AppDelegate.swift */,
-				83939F792B78163D00621F8A /* AppTransition.swift */,
 				83134CD52B6B195100C401D5 /* main.swift */,
 				83134CC82B6B0B4000C401D5 /* Assets.xcassets */,
 				83134CCD2B6B0B4000C401D5 /* Coding_Challenge_MacOs.entitlements */,
@@ -180,8 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				83939F7D2B78182000621F8A /* MainWindowCoordinator.swift */,
-				83939F6B2B78091800621F8A /* MainWindowController.swift */,
-				83939FE12B788F5500621F8A /* Container */,
+				83939FE12B788F5500621F8A /* WindowContainer */,
 				83CB73ED2B819FDA00B08FBA /* CharacterList */,
 				83CB73EE2B819FEC00B08FBA /* CharacterDetail */,
 			);
@@ -272,6 +273,7 @@
 		83939F952B783B4100621F8A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				83D469912B829EB500F0956C /* DetailCharacterRepositoryRepresentable.swift */,
 				83939FC32B78705200621F8A /* LocationRepositoryRepresentable.swift */,
 				83939FC52B78706200621F8A /* EpisodeRepositoryRepresentable.swift */,
 			);
@@ -367,13 +369,14 @@
 			name = Episode;
 			sourceTree = "<group>";
 		};
-		83939FE12B788F5500621F8A /* Container */ = {
+		83939FE12B788F5500621F8A /* WindowContainer */ = {
 			isa = PBXGroup;
 			children = (
+				83939F6B2B78091800621F8A /* MainWindowController.swift */,
 				83939FE22B788F9D00621F8A /* ContainerViewController.swift */,
 				83939FE32B788F9D00621F8A /* ContainerViewController.xib */,
 			);
-			name = Container;
+			name = WindowContainer;
 			sourceTree = "<group>";
 		};
 		83CB73DA2B81648600B08FBA /* Cell */ = {
@@ -613,6 +616,7 @@
 				83CB73E22B817D1900B08FBA /* ViewState.swift in Sources */,
 				83CB73FF2B81A5A500B08FBA /* Location.swift in Sources */,
 				83939F782B78161800621F8A /* Router.swift in Sources */,
+				83D469922B829EB500F0956C /* DetailCharacterRepositoryRepresentable.swift in Sources */,
 				83939F6D2B78091800621F8A /* MainWindowController.swift in Sources */,
 				83939FAB2B78460E00621F8A /* CharacterDataMapper.swift in Sources */,
 				83939F942B783A7C00621F8A /* DetailLocationDTO.swift in Sources */,
@@ -620,7 +624,7 @@
 				83CB73EC2B81961500B08FBA /* ImageLoader.swift in Sources */,
 				83939F9D2B7841E200621F8A /* CharacterRepository.swift in Sources */,
 				83939FA42B7842FF00621F8A /* Gender.swift in Sources */,
-				83939F7A2B78163D00621F8A /* AppTransition.swift in Sources */,
+				83939F7A2B78163D00621F8A /* AppWindow.swift in Sources */,
 				83939FD02B787E5500621F8A /* LocationDataMapper.swift in Sources */,
 				83939F882B782D5300621F8A /* Constants.swift in Sources */,
 				83939FA22B78428500621F8A /* DetailCharacter.swift in Sources */,

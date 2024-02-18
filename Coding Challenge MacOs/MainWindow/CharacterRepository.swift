@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharacterRepository: CharacterRepositoryRepresentable {
+final class CharacterRepository: CharacterRepositoryRepresentable, DetailCharacterRepositoryRepresentable {
     
     private let service: CharacterAPIDataSource
     
@@ -27,14 +27,14 @@ final class CharacterRepository: CharacterRepositoryRepresentable {
         }
     }
     
-//    func getSingleCharacter(withId id: Int) async -> Result<Character, Failure> {
-//        let serviceResponse = await service.fetchSingleCharacter(withId: id)
-//        
-//        switch(serviceResponse) {
-//        case .success(let response):
-//            return .success(CharacterDataMapper.convertToCharacter(response))
-//        case .failure(let error):
-//            return .failure(error)
-//        }
-//    }
+    func getSingleCharacter(withId id: Int) async -> Result<DetailCharacter, Failure> {
+        let serviceResponse = await service.fetchSingleCharacter(withId: id)
+        
+        switch(serviceResponse) {
+        case .success(let response):
+            return .success(DetailCharacterDataMapper.convertToCharacter(response))
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
 }

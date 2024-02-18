@@ -11,8 +11,8 @@ private let reuseIdentifier = "Cell"
 
 class CharacterListViewController: NSViewController {
 
-    @IBOutlet weak var charactersCollectionView: NSCollectionView!
-    @IBOutlet weak var progressView: NSProgressIndicator!
+    @IBOutlet private weak var charactersCollectionView: NSCollectionView!
+    @IBOutlet private weak var progressView: NSProgressIndicator!
         
     // MARK: - Properties
     private let viewModel: CharacterListViewModel
@@ -34,7 +34,7 @@ class CharacterListViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         charactersCollectionView.isSelectable = true
-        charactersCollectionView.allowsEmptySelection = true
+        charactersCollectionView.allowsEmptySelection = false
         charactersCollectionView.register(CharacterItemCell.self, forItemWithIdentifier: CharacterItemCell.reuseIdentifier)
         
         viewModel.characterListDidChange = { [unowned self] newCharacterList in
@@ -113,8 +113,11 @@ extension CharacterListViewController: NSCollectionViewDelegate {
                 imageUrl: item.image,
                 characterName: item.name,
                 characterOrigin: item.origin.name,
-                onSelect: {
-                    viewModel.didSelectItem(itemId: item.id)
+                onSelectionChange: { isSelected in
+                    
+                    if isSelected {
+                        viewModel.didSelectItem(itemId: item.id)
+                    }
                 }
             )
         

@@ -13,9 +13,11 @@ class ContainerViewController: NSViewController {
     @IBOutlet private weak var charactersDetailContainerView: NSView!
     
     private let characterListVC: CharacterListViewController
+    private let characterDetailVC: CharacterDetailViewController
     
-    init(characterListVC: CharacterListViewController) {
+    init(characterListVC: CharacterListViewController, characterDetailVC: CharacterDetailViewController) {
         self.characterListVC = characterListVC
+        self.characterDetailVC = characterDetailVC
         
         super.init(nibName: "ContainerViewController", bundle: nil)
     }
@@ -34,8 +36,7 @@ class ContainerViewController: NSViewController {
     private func setUpChildViewControllers() {
         super.viewDidLoad()
         
-        
         add(viewController: characterListVC, to: charactersContainerView)
-        add(viewController: CharacterDetailViewController(), to: charactersDetailContainerView)
+        add(viewController: characterDetailVC, to: charactersDetailContainerView)
     }
 }

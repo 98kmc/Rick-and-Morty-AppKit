@@ -9,7 +9,7 @@ import Foundation
 
 protocol CharacterListViewModelDelegate {
     
-    func updateDetailView()
+    func updateDetailView(characterId: Int?)
 }
 
 final class CharacterListViewModel {
@@ -41,7 +41,7 @@ final class CharacterListViewModel {
     
     private func loadPage(page: Int) {
         Task {
-            viewState = .loading
+            viewState = .loading(nil)
             let response = await characterUseCase.invoke(page: page)
             
             switch(response) {
@@ -60,7 +60,7 @@ final class CharacterListViewModel {
 extension CharacterListViewModel {
     
     func didSelectItem(itemId: Int) {
-        print("selected: \(itemId)")
+        delegate.updateDetailView(characterId: itemId)
     }
     
     func pageIfNeeded(itemId: Int) {
@@ -68,5 +68,10 @@ extension CharacterListViewModel {
         guard itemId == characterList.last?.id else { return }
         print("page down")
         loadPage(page: currentPage + 1)
+    }
+    
+    func didDeselectElements() {
+        print("No Selection")
+        delegate.updateDetailView(characterId: nil)
     }
 }

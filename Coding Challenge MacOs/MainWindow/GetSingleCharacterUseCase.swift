@@ -9,13 +9,13 @@ import Foundation
 
 final class GetSingleCharacterUseCase {
     
-    private let repository: CharacterRepositoryRepresentable
+    private let repository: DetailCharacterRepositoryRepresentable
     
-    init(repository: CharacterRepositoryRepresentable = CharacterRepository()) {
+    init(repository: DetailCharacterRepositoryRepresentable = CharacterRepository()) {
         self.repository = repository
     }
     
-//    func invoke(characterId: Int) async -> Result<DetailCharacter, Failure> {
-//        await repository.getSingleCharacter(withId: characterId)
-//    }
+    func invoke(characterId: Int) async -> Result<DetailCharacter, Failure> {
+        await repository.getSingleCharacter(withId: characterId)
+    }
 }

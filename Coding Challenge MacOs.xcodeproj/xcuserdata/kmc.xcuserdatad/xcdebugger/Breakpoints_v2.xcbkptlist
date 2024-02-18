@@ -7,47 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0"
+            uuid = "0E75C2D7-F1EF-4312-B792-FEFB70DCD7F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coding Challenge MacOs/MainWindow/CharacterListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "createDataSource()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0 - d44f13e152676077"
+                  uuid = "0E75C2D7-F1EF-4312-B792-FEFB70DCD7F0 - 1874fd8f39a9825a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
                   moduleName = "Coding Challenge MacOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kmc/Developer/Rick-and-Morty-AppKit/Coding%20Challenge%20MacOs/MainWindow/CharacterListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "836">
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "256">
                </Location>
                <Location
-                  uuid = "33445E51-0A66-45B3-9A16-ABBAFB6253B0 - d44f13e152676054"
+                  uuid = "0E75C2D7-F1EF-4312-B792-FEFB70DCD7F0 - 1874fd8f39a98298"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (__C.NSCollectionView, Foundation.IndexPath, Coding_Challenge_MacOs.Character) -&gt; Swift.Optional&lt;__C.NSCollectionViewItem&gt; in Coding_Challenge_MacOs.CharacterListViewController.createDataSource() -&gt; AppKit.NSCollectionViewDiffableDataSource&lt;Swift.String, Coding_Challenge_MacOs.Character&gt;"
                   moduleName = "Coding Challenge MacOs"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kmc/Developer/Rick-and-Morty-AppKit/Coding%20Challenge%20MacOs/MainWindow/CharacterListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "89"
-                  endingLineNumber = "89"
-                  offsetFromSymbolStart = "736">
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "360">
                </Location>
             </Locations>
          </BreakpointContent>

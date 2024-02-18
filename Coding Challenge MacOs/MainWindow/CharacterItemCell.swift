@@ -13,12 +13,12 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
     @IBOutlet weak var characterNameTextField: NSTextField!
     @IBOutlet weak var characterOriginTextField: NSTextField!
     
-    private var onSelect: (() -> Void)?
+    private var onSelectionChange: ((Bool) -> Void)?
     
     override var isSelected: Bool {
         didSet {
             selectionDidChange(isSelected)
-            if isSelected { onSelect?() }
+            onSelectionChange?(isSelected)
         }
     }
     
@@ -56,10 +56,10 @@ class CharacterItemCell: NSCollectionViewItem, ImageLoader {
 // MARK: Exposed Methods
 extension CharacterItemCell {
     
-    func render(imageUrl: String, characterName: String, characterOrigin: String, onSelect: @escaping () -> Void) {
+    func render(imageUrl: String, characterName: String, characterOrigin: String, onSelectionChange: @escaping (Bool) -> Void) {
         characterNameTextField.stringValue = characterName
         characterOriginTextField.stringValue = "from: \(characterOrigin)"
-        self.onSelect = onSelect
+        self.onSelectionChange = onSelectionChange
         
         Task {
             let image = try? await fetchImage(imageURL: imageUrl)

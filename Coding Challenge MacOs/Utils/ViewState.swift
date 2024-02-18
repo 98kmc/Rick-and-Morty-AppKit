@@ -10,5 +10,5 @@ import Foundation
 enum ViewState {
     case success
     case error(Error)
-    case loading
+    case loading(Float?)
 }

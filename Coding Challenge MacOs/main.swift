@@ -17,7 +17,7 @@ final class App: AppRouter, Coordinator {
         process(route: .showMainWindow)
     }
     
-    func process(route: AppTransition) {
+    func process(route: AppWindow) {
         let coordinator = route.coordinatorFor(router: self)
         coordinator.start()
     }
